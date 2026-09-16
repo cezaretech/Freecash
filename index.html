@@ -1,55 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Freecash</title>
 
-  <script>
-    const referral = "https://freecash.com/r/108349295602533319714";
-
-    const iosStore =
-      "https://apps.apple.com/app/freecash-get-paid-real-money/id1673567402";
-
-    const androidStore =
-      "https://play.google.com/store/apps/details?id=com.freecash.app2";
-
-    function openFreecash() {
-      const ua = navigator.userAgent || navigator.vendor || window.opera;
-
-      // iPhone / iPad
-      if (/iPhone|iPad|iPod/i.test(ua)) {
-        window.location.href = referral;
-
-        setTimeout(function () {
-          window.location.href = iosStore;
-        }, 1800);
-
-        return;
-      }
-
-      // Android
-      if (/Android/i.test(ua)) {
-        window.location.href =
-          "intent://r/108349295602533319714#Intent;" +
-          "scheme=https;" +
-          "package=com.freecash.app2;" +
-          "S.browser_fallback_url=" +
-          encodeURIComponent(androidStore) +
-          ";end";
-
-        return;
-      }
-
-      // Desktop
-      window.location.href = referral;
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
     }
 
-    window.onload = openFreecash;
-  </script>
+    .box {
+      max-width: 360px;
+      padding: 30px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #bbb;
+      line-height: 1.5;
+    }
+
+    a {
+      display: block;
+      margin-top: 25px;
+      padding: 16px;
+      background: #fff;
+      color: #111;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 17px;
+    }
+  </style>
 </head>
 
 <body>
-  <p>Opening Freecash...</p>
+
+  <div class="box">
+    <h1>Open Freecash</h1>
+
+    <p>
+      For the best experience, open this link in your browser.
+    </p>
+
+    <a href="https://freecash.com/r/108349295602533319714">
+      Open Freecash
+    </a>
+  </div>
+
 </body>
 </html>
