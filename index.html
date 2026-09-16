@@ -2,9 +2,53 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=https://freecash.com/r/108349295602533319714">
-  <title>Opening Freecash...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freecash</title>
+
+  <script>
+    const referral = "https://freecash.com/r/108349295602533319714";
+
+    const iosStore =
+      "https://apps.apple.com/app/freecash-get-paid-real-money/id1673567402";
+
+    const androidStore =
+      "https://play.google.com/store/apps/details?id=com.freecash.app2";
+
+    function openFreecash() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+      // iPhone / iPad
+      if (/iPhone|iPad|iPod/i.test(ua)) {
+        window.location.href = referral;
+
+        setTimeout(function () {
+          window.location.href = iosStore;
+        }, 1800);
+
+        return;
+      }
+
+      // Android
+      if (/Android/i.test(ua)) {
+        window.location.href =
+          "intent://r/108349295602533319714#Intent;" +
+          "scheme=https;" +
+          "package=com.freecash.app2;" +
+          "S.browser_fallback_url=" +
+          encodeURIComponent(androidStore) +
+          ";end";
+
+        return;
+      }
+
+      // Desktop
+      window.location.href = referral;
+    }
+
+    window.onload = openFreecash;
+  </script>
 </head>
+
 <body>
   <p>Opening Freecash...</p>
 </body>
